@@ -49,7 +49,7 @@ public abstract class OutputFormat<K, V> {
 
   /** 
    * Get the {@link RecordWriter} for the given task.
-   *
+   * 获取task的RecordWriter的实现
    * @param context the information about the current task.
    * @return a {@link RecordWriter} to write the output for the job.
    * @throws IOException
@@ -60,7 +60,7 @@ public abstract class OutputFormat<K, V> {
 
   /** 
    * Check for validity of the output-specification for the job.
-   *  
+   *  在任务提交的时候对输出路径做检查，通常是用来检查输出路径是否存在，如果已经存在就throw 异常
    * <p>This is to validate the output specification for the job when it is
    * a job is submitted.  Typically checks that it does not already exist,
    * throwing an exception when it already exists, so that output is not
